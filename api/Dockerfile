@@ -13,10 +13,10 @@ RUN go mod download && go mod verify
 COPY . ./
 
 # build
-RUN go build -o /docker-webCli
+RUN go build -o /go-badtemp
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD [ "/docker-webCli" ]
+CMD [ "/go-badtemp" ]
 
 
