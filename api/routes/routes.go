@@ -20,7 +20,6 @@ const badtempEndpoint = "https://www.kalmar.se/opendata/WaterQualityObservedFiwa
 func SetupRoutes() {
 	r := gin.Default()
 	r.SetTrustedProxies(nil)
-	r.Use(favicon.New("../public/favicon.ico"))
 
 	// routes
 	r.GET("/hello", hello)

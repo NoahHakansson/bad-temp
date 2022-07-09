@@ -17,11 +17,17 @@
       .then(function (response) {
         console.log(response.data);
         temps = response.data;
-        // assign a name with the location name only
+        // assign a name and time
         temps.forEach(temp => {
           let name = temp.id.split(":")[2];
-          console.log(name);
           temp["name"] = name;
+          let time = temp.dateObserved.value.split("T");
+          let date = time[0]
+          time = time[1]
+          time = time.split(":", 2);
+          time = `${time[0]}:${time[1]}`;
+          temp["time"] = time;
+          temp["date"] = date;
         });
       })
       .catch(function (error) {
@@ -38,7 +44,8 @@
         <h3>
           {temp.name}
         </h3>
-        <p>Temperatur: {temp.temperature.value}°C</p>
+        <p>Temperatur: {temp.temperature.value}°C
+          <br>Tid: {temp.time}, {temp.date}</p>
       </Card>
     </Col>
   {/each}

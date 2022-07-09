@@ -9,7 +9,7 @@
 </script>
 
 <Container>
-  <h1>Vatten Temperaturer Kalmar</h1>
+  <h1>Badtemperaturer Kalmar</h1>
 
   <TempList endpoint={apiUrl} />
 </Container>
