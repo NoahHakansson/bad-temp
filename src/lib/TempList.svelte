@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
+  import { Card, Col, Badge, Row } from "sveltestrap";
   import axios from "axios";
   export let endpoint = "";
 
-  let tempData = {};
+  let temps = [];
 
   const options = {
     method: "GET",
@@ -15,20 +16,36 @@
       .request(options)
       .then(function (response) {
         console.log(response.data);
+        temps = response.data;
+        // assign a name with the location name only
+        temps.forEach(temp => {
+          let name = temp.id.split(":")[2];
+          console.log(name);
+          temp["name"] = name;
+        });
       })
       .catch(function (error) {
         console.error(error);
       });
   });
 
-  console.log(tempData);
 </script>
 
-<div class="main">test</div>
+<Row cols={2}>
+  {#each temps as temp (temp.id)}
+    <Col>
+      <Card body class="mb-3">
+        <h3>
+          {temp.name}
+        </h3>
+        <p>Temperatur: {temp.temperature.value}°C</p>
+      </Card>
+    </Col>
+  {/each}
+</Row>
 
 <style>
-  .main {
-    font-family: inherit;
-    font-size: inherit;
+  h3 {
+    font-size: 35px;
   }
 </style>
