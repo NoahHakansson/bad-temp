@@ -7,7 +7,8 @@ services:
     build:
       context: .
     volumes:
-      - dist:/app/dist
+      - ./dist:/app/dist
+    restart: always
 
   bad-temp-backend:
     image: go-gin-backend
@@ -15,6 +16,7 @@ services:
       - "5000:5000"
     build:
       context: api
+    restart: always
 
 volumes:
   dist:
