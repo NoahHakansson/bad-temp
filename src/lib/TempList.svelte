@@ -58,6 +58,16 @@
 
 <style>
   h3 {
-    font-size: 35px;
+    font-size: 5vw;
+  }
+  @media screen and (min-width: 800px) {
+    h3 {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    h3 {
+      font-size: 20px;
+    }
   }
 </style>
