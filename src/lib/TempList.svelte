@@ -18,12 +18,12 @@
         console.log(response.data);
         temps = response.data;
         // assign a name and time
-        temps.forEach(temp => {
+        temps.forEach((temp) => {
           let name = temp.id.split(":")[2];
           temp["name"] = name;
           let time = temp.dateObserved.value.split("T");
-          let date = time[0]
-          time = time[1]
+          let date = time[0];
+          time = time[1];
           time = time.split(":", 2);
           time = `${time[0]}:${time[1]}`;
           temp["time"] = time;
@@ -34,22 +34,27 @@
         console.error(error);
       });
   });
-
 </script>
 
-<Row cols={2}>
-  {#each temps as temp (temp.id)}
-    <Col>
-      <Card body class="mb-3">
-        <h3>
-          {temp.name}
-        </h3>
-        <p>Temperatur: {temp.temperature.value}°C
-          <br>Tid: {temp.time}, {temp.date}</p>
-      </Card>
-    </Col>
-  {/each}
-</Row>
+{#if temps.length > 0}
+  <Row cols={2}>
+    {#each temps as temp (temp.id)}
+      <Col>
+        <Card body class="mb-3">
+          <h3>
+            {temp.name}
+          </h3>
+          <p>
+            Temperatur: {temp.temperature.value}°C
+            <br />Tid: {temp.time}, {temp.date}
+          </p>
+        </Card>
+      </Col>
+    {/each}
+  </Row>
+{:else}
+  <p style="text-align: center;">Data kunde inte hämtas...</p>
+{/if}
 
 <style>
   h3 {

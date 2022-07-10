@@ -1,0 +1,16 @@
+
+services:
+  bad-temp-frontend:
+    image: svelte-nginx
+    ports:
+      - "3000:80"
+    build:
+      context: .
+
+  bad-temp-backend:
+    image: go-gin-backend
+    ports:
+      - "5000:5000"
+    build:
+      context: api
+
