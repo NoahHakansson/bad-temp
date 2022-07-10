@@ -1,11 +1,13 @@
 
 services:
   bad-temp-frontend:
-    image: svelte-nginx
+    image: svelte-frontend
     ports:
       - "3000:80"
     build:
       context: .
+    volumes:
+      - dist:/app/dist
 
   bad-temp-backend:
     image: go-gin-backend
@@ -14,3 +16,5 @@ services:
     build:
       context: api
 
+volumes:
+  dist:
