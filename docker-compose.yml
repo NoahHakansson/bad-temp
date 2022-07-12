@@ -1,14 +1,15 @@
 
 services:
   bad-temp-frontend:
-    image: svelte-frontend
+    image: node:16
+    volumes:
+      - ./frontend:/app
     ports:
       - "3000:80"
-    build:
-      context: .
-    volumes:
-      - ./dist:/app/dist
-    restart: always
+    command: bash -c "cd app && npm install && npm run build"
+    # build:
+    #   context: .
+    # restart: always
 
   bad-temp-backend:
     image: go-gin-backend
@@ -18,5 +19,5 @@ services:
       context: api
     restart: always
 
-volumes:
-  dist:
+# volumes:
+#   dist:
