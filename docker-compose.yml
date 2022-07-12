@@ -8,9 +8,6 @@ services:
     ports:
       - "3000:80"
     command: bash -c "cd app && npm install && npm run build"
-    # build:
-    #   context: .
-    # restart: always
 
   bad-temp-backend:
     image: go-gin-backend
@@ -20,5 +17,3 @@ services:
       context: backend
     restart: always
 
-# volumes:
-#   dist:
