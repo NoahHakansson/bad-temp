@@ -15,7 +15,6 @@
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         temps = response.data;
         // assign a name and time
         temps.forEach((temp) => {
