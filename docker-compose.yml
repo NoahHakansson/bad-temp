@@ -17,7 +17,7 @@ services:
     ports:
       - "5000:5000"
     build:
-      context: api
+      context: backend
     restart: always
 
 # volumes:
