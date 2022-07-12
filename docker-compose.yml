@@ -1,4 +1,5 @@
 
+version: "3"
 services:
   bad-temp-frontend:
     image: node:16
