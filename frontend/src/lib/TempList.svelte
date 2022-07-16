@@ -16,18 +16,6 @@
       .request(options)
       .then(function (response) {
         temps = response.data;
-        // assign a name and time
-        temps.forEach((temp) => {
-          let name = temp.id.split(":")[2];
-          temp["name"] = name;
-          let time = temp.dateObserved.value.split("T");
-          let date = time[0];
-          time = time[1];
-          time = time.split(":", 2);
-          time = `${time[0]}:${time[1]}`;
-          temp["time"] = time;
-          temp["date"] = date;
-        });
       })
       .catch(function (error) {
         console.error(error);
@@ -44,7 +32,7 @@
             {temp.name}
           </h3>
           <p>
-            Temperatur: {temp.temperature.value}°C
+            Temperatur: {temp.temperature} °C
             <br />Tid: {temp.time}, {temp.date}
           </p>
         </Card>
