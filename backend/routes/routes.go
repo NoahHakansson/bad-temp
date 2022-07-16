@@ -45,8 +45,8 @@ func SetupRoutes() {
 	r.SetTrustedProxies([]string{"127.0.0.1"})
 
 	// routes
-	r.GET("/hello", hello)
-	r.GET("/badtemp", badtemp)
+	r.GET("/api/hello", hello)
+	r.GET("/api/badtemp", badtemp)
 
 	r.Run(":5000")
 }
