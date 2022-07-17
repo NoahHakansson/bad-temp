@@ -52,7 +52,7 @@ func SetupRoutes() {
 }
 
 func hello(c *gin.Context) {
-	msg := "Hello World!"
+	msg := "Hi there!"
 	c.IndentedJSON(http.StatusOK, msg)
 }
 
