@@ -5,7 +5,7 @@
   import { Col, Container, Row } from "sveltestrap";
 
   const apiUrl = "http://localhost:5000/badtemp" // local
-  // const apiUrl = "http://badtemp.noahhakansson/api/badtemp" // prod
+  // const apiUrl = "https://badtemp.noahhakansson/api/badtemp" // prod
 </script>
 
 <Container>
