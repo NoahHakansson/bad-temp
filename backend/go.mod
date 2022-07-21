@@ -1,4 +1,4 @@
-module github.com/NoahHakansson/bad-temp/api
+module github.com/NoahHakansson/bad-temp/backend
 
 go 1.18
 
