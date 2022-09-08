@@ -4,8 +4,8 @@
   import { Image, Navbar } from "sveltestrap";
   import { Col, Container, Row } from "sveltestrap";
 
-  const apiUrl = "http://localhost:5000/badtemp" // local
-  // const apiUrl = "https://yourdomain.com/api/badtemp" // prod
+  const apiUrl = "http://localhost:5000/badtemp"; // local
+  // const apiUrl = "https://api.yourdomain.com/badtemp" // prod
 </script>
 
 <Container>
