@@ -26,3 +26,8 @@ services:
     build:
       context: backend
     restart: always
+
+networks:
+  default:
+    name: nginx-proxy-acme_default
+    external: true
