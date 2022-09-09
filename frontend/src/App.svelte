@@ -1,8 +1,6 @@
 <script>
-  import logo from "./assets/svelte.png";
   import TempList from "./lib/TempList.svelte";
-  import { Image, Navbar } from "sveltestrap";
-  import { Col, Container, Row } from "sveltestrap";
+  import { Container } from "sveltestrap";
 
   const apiUrl = "http://localhost:5000/badtemp"; // local
   // const apiUrl = "https://api.yourdomain.com/badtemp" // prod

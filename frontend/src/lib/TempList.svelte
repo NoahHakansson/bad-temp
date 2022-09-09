@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { Card, Col, Badge, Row } from "sveltestrap";
+  import { Card, Col, Row } from "sveltestrap";
   import axios from "axios";
   export let endpoint = "";
 
