@@ -3,6 +3,11 @@ version: "3"
 services:
   bad-temp-frontend:
     image: node:16
+    environment:
+      - VIRTUAL_HOST=badtemp.noahhakansson.com
+      - LETSENCRYPT_HOST=badtemp.noahhakansson.com
+      - LETSENCRYPT_EMAIL=noah.hakansson@protonmail.com
+
     volumes:
       - ./frontend:/app
     ports:
@@ -12,8 +17,11 @@ services:
   bad-temp-backend:
     image: go-gin-backend
     environment:
-      - GIN_MODE=debug
-      # - GIN_MODE=release
+      # - GIN_MODE=debug
+      - GIN_MODE=release
+      - VIRTUAL_HOST=api.badtemp.noahhakansson.com
+      - LETSENCRYPT_HOST=api.badtemp.noahhakansson.com
+      - LETSENCRYPT_EMAIL=noah.hakansson@protonmail.com
     ports:
       - "5000:5000"
     build:
