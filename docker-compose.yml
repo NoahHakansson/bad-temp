@@ -7,7 +7,6 @@ services:
       - VIRTUAL_HOST=badtemp.noahhakansson.com
       - LETSENCRYPT_HOST=badtemp.noahhakansson.com
       - LETSENCRYPT_EMAIL=noah.hakansson@protonmail.com
-
     volumes:
       - ./frontend:/app
     ports:
