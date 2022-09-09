@@ -45,8 +45,8 @@ func SetupRoutes() {
 	r.SetTrustedProxies([]string{"127.0.0.1"})
 
 	// routes
-	r.GET("/api/hello", hello)
-	r.GET("/api/badtemp", badtemp)
+	r.GET("/hello", hello)
+	r.GET("/badtemp", badtemp)
 
 	r.Run(":5000")
 }
@@ -59,7 +59,6 @@ func hello(c *gin.Context) {
 func badtemp(c *gin.Context) {
 	// GET JSON data
 	resp, err := http.Get(badtempEndpoint)
-
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -68,7 +67,6 @@ func badtemp(c *gin.Context) {
 
 	// Read data
 	body, err := ioutil.ReadAll(resp.Body)
-
 	if err != nil {
 		log.Fatal(err)
 	}
